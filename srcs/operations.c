@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 02:34:02 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/03 02:44:08 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/03 16:14:31 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,29 @@ void pa(t_stack *a, t_stack *b)
 		a->top++;
 		a->stack[a->top] = b->stack[b->top];
 		b->top--;
+	}
+}
+
+void sa(t_stack *a)
+{
+	int	tmp;
+
+	if (a->top > 0)
+	{
+		tmp = a->stack[a->top];
+		a->stack[a->top] = a->stack[a->top -1];
+		a->stack[a->top -1] = tmp;
+	}
+}
+
+void sb(t_stack *b)
+{
+	int	tmp;
+
+	if (b->top > 0)
+	{
+		tmp = b->stack[b->top];
+		b->stack[b->top] = b->stack[b->top - 1];
+		b->stack[b->top -1] = tmp;
 	}
 }

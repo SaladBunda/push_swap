@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/03 02:54:25 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:47:49 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,12 @@ void init_stacks(char **av, int ac, t_stack *stack_a, t_stack *stack_b)
 
 void print_stacks(t_stack a,t_stack b)
 {
-	int i = 0;
-	int j = 0;
 	printf("-----------------stack a-----------\n");
-	while(i < a.top + 1)
-		printf("%d\n", a.stack[i++]);
+	while(a.top >= 0)
+		printf("%d\n", a.stack[a.top--]);
 	printf("-----------------stack b------------\n");
-	while(j < b.top + 1)
-		printf("%d\n", b.stack[j++]);
+	while(b.top >= 0)
+		printf("%d\n", b.stack[b.top--]);
 }
 
 int	main(int ac, char **av)
@@ -115,28 +113,15 @@ int	main(int ac, char **av)
 			init_stacks(av, ac, &a, &b);
 			if(duplicates(a) == 0)
 				return(write(1, "Error\n", 6),0);
+			printf("******printing stack******\n");
 			print_stacks(a,b);
-			pb(&a,&b);
+			printf("++++++bubble sort++++++\n");
+			bubble_sort(&a);
 			print_stacks(a,b);
-			pb(&a,&b);
+			range(&a,&b);
+			printf("=====ranged=====\n");
 			print_stacks(a,b);
-			pb(&a,&b);
-			print_stacks(a,b);
-			pb(&a,&b);
-			print_stacks(a,b);
-			pb(&a,&b);
-			print_stacks(a,b);
-			printf("first part\n");
-			print_stacks(a,b);
-			pa(&a,&b);
-			print_stacks(a,b);
-			pa(&a,&b);
-			print_stacks(a,b);
-			pa(&a,&b);
-			print_stacks(a,b);
-			pa(&a,&b);
-			print_stacks(a,b);
-			// printf("stack a top: %d                  stack b top: %d\n", a.stack[a.top],b.stack[b.top]);
+			
 		}
 		else
 			write(1, "Error\n", 6);
