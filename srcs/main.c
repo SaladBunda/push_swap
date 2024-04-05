@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/04 01:47:49 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/04 23:10:20 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,18 +109,18 @@ int	main(int ac, char **av)
 	{
 		if(test_argv(av, ac) == 1)
 		{
-			write(1, "valid\n", 6);
+			// write(1, "valid\n", 6);
 			init_stacks(av, ac, &a, &b);
 			if(duplicates(a) == 0)
 				return(write(1, "Error\n", 6),0);
-			printf("******printing stack******\n");
-			print_stacks(a,b);
-			printf("++++++bubble sort++++++\n");
+			// printf("******printing stack******\n");
+			// print_stacks(a,b);
+			// printf("++++++bubble sort++++++\n");
 			bubble_sort(&a);
-			print_stacks(a,b);
+			// print_stacks(a,b);
 			range(&a,&b);
-			printf("=====ranged=====\n");
-			print_stacks(a,b);
+			// printf("=====ranged=====\n");
+			// print_stacks(a,b);
 			
 		}
 		else
