@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 01:07:40 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/04 23:58:58 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/05 01:12:21 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int get_max_index(t_stack *b)
 		}
 		i--;
 	}
-	// printf("max is :%d\nindex is:%d\n",max[0],max[1]);
 	return (max[1]);
 
 }
@@ -38,7 +37,6 @@ int get_median(t_stack *b)
 	int i;
 	
 	i = (b->top + 1)/2;
-	// printf("median is:%d\n",i);
 	return (i);
 }
 void pushing_back(t_stack *a, t_stack *b)
@@ -82,7 +80,9 @@ void range(t_stack *a, t_stack *b)
 	int rng;
 	int max;
 	min = 0;
-	if(a->size <= 500 && a->size > 100)
+	if (a->size > 500)
+		rng = 38;
+	else if(a->size <= 500 && a->size > 100)
 		rng = 33;
 	else if (a->size <= 100 && a->size > 50)
 		rng = 15;
