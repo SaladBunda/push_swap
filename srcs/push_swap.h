@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:59:48 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/04 01:23:33 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/05 22:28:37 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,10 @@ void	rr(t_stack *a, t_stack *b);
 void	ss(t_stack *a, t_stack *b);
 void	bubble_sort(t_stack *a);
 void range(t_stack *a, t_stack *b);
+int is_sorted(t_stack *a);
+void sort_three(t_stack *a);
+int get_max_index(t_stack *b);
+void sort_four(t_stack *a, t_stack *b);
+void sort_five(t_stack *a, t_stack *b);
 
 #endif

@@ -1,4 +1,4 @@
-SRCS = main.c ft_split.c util_func1.c util_func2.c operations.c operations2.c operations3.c sort.c range.c
+SRCS = main.c ft_split.c util_func1.c util_func2.c operations.c operations2.c operations3.c sort.c range.c extra_sort.c
 # SRCB = 
 DIR = ./srcs/
 BONUS_DIR = ./bonus/

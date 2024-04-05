@@ -6,24 +6,24 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 01:07:40 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/05 01:12:21 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/05 22:29:04 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_max_index(t_stack *b)
+int get_max_index(t_stack *x)
 {
 	int i;
 	int max[2];
-	max[0] = b->stack[b->top];
-	i = b->top;
+	max[0] = x->stack[x->top];
+	i = x->top;
 	max[1] = i;
 	while(i >= 0)
 	{
-		if(max[0] < b->stack[i])
+		if(max[0] < x->stack[i])
 		{
-			max[0] = b->stack[i];
+			max[0] = x->stack[i];
 			max[1] = i;
 		}
 		i--;
@@ -74,20 +74,12 @@ void pushing_back(t_stack *a, t_stack *b)
 	}
 }
 
-void range(t_stack *a, t_stack *b)
+void push_to_b(t_stack *a, t_stack *b, int rng)
 {
 	int min;
-	int rng;
 	int max;
+
 	min = 0;
-	if (a->size > 500)
-		rng = 38;
-	else if(a->size <= 500 && a->size > 100)
-		rng = 33;
-	else if (a->size <= 100 && a->size > 50)
-		rng = 15;
-	else if (a->size <= 50 && a->size > 5)
-		rng = 5;
 	while(a->top > -1)
 	{
 		max = min + rng;
@@ -108,9 +100,32 @@ void range(t_stack *a, t_stack *b)
 			pb(a,b);
 			rb(b);
 			printf("pb\nrb\n");
-			if(max < a->size)
+			if (max < a->size)
 				min++;
 		}
+	}
+}
+
+void range(t_stack *a, t_stack *b)
+{
+	if (a->size > 500)
+		push_to_b(a, b, 38);
+	else if(a->size <= 500 && a->size > 100)
+		push_to_b(a, b, 33);
+	else if (a->size <= 100 && a->size > 30)
+		push_to_b(a, b, 15);
+	else if (a->size <= 30 && a->size > 5)
+		push_to_b(a, b, 8);
+	else if (a->size == 5)
+		sort_five(a, b);
+	else if (a->size == 4)
+		sort_four(a, b);
+	else if (a->size == 3)
+		sort_three(a);
+	else if (a->size == 2)
+	{
+		sa(a);
+		printf("sa\n");
 	}
 	pushing_back(a, b);
 }

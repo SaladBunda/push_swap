@@ -6,11 +6,24 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:46:57 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/04 00:28:21 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:53:21 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int is_sorted(t_stack *a)
+{
+	int i;
+	i = 0;
+	while(i < a->size - 1)
+	{
+		if (a->stack[i] < a->stack[i + 1])
+			return 1;
+		i++;
+	}
+	return 0;
+}
 
 void swap(int *a, int *b)
 {
