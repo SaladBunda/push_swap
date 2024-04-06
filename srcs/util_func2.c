@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:26:52 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/05 22:54:45 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:53:10 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(char *s)
 	return (count);
 }
 
-int	ft_atoi(const char *s)
+int	ft_atoi(const char *s, int *error)
 {
 	int					i;
 	int					sign;
