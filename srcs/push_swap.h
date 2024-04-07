@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:59:48 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/06 02:53:04 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/07 22:15:42 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ void	sort_five(t_stack *a, t_stack *b);
 void	sort_four(t_stack *a, t_stack *b);
 int		ft_strlen(char *s);
 char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *s, int *error);
+int		ft_atoi(char *s, int *error);
 int		is_sorted(t_stack *a);
 int		get_max_index(t_stack *b);
+int		get_range(int size);
 
 #endif

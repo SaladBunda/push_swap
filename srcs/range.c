@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 01:07:40 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/06 02:07:10 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/07 22:09:56 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,8 @@ void	push_to_b(t_stack *a, t_stack *b, int rng)
 
 void	range(t_stack *a, t_stack *b)
 {
-	if (a->size > 500)
-		push_to_b(a, b, 38);
-	else if (a->size <= 501 && a->size > 101)
-		push_to_b(a, b, 33);
-	else if (a->size <= 101 && a->size > 30)
-		push_to_b(a, b, 15);
-	else if (a->size <= 30 && a->size > 5)
-		push_to_b(a, b, 7);
+	if (a->size > 5)
+		push_to_b(a, b, get_range(a->size));
 	else if (a->size == 5)
 		sort_five(a, b);
 	else if (a->size == 4)
