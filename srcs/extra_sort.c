@@ -55,22 +55,14 @@ void	sort_four(t_stack *a, t_stack *b)
 	while (i != a->top)
 	{
 		if (i > 1)
-		{
 			ra(a);
-		
-		}
 		else
-		{
 			rra(a);
-			
-		}
 		i = get_min_index(a);
 	}
 	pb(a, b);
-	// printf("pb\n");
 	sort_three(a);
 	pa(a, b);
-	// printf("pa\n");
 }
 
 void	sort_five(t_stack *a, t_stack *b)
@@ -81,20 +73,12 @@ void	sort_five(t_stack *a, t_stack *b)
 	while (i != a->top)
 	{
 		if (i > 2)
-		{
 			ra(a);
-			// printf("ra\n");
-		}
 		else
-		{
 			rra(a);
-			// printf("rra\n");
-		}
 		i = get_min_index(a);
 	}
 	pb(a, b);
-	// printf("pb\n");
 	sort_four(a, b);
 	pa(a, b);
-	// printf("pa\n");
 }
