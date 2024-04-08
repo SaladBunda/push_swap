@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:46:57 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/05 23:06:27 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:11:49 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ void	bubble_sort(t_stack *a)
 	}
 	sort(arr, a->size);
 	put_indexes(arr, a);
+	free(arr);
 }

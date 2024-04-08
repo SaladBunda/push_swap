@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/08 17:34:55 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:14:53 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 			stack_a->stack[k--] = ft_atoi(arg[j], &error);
 			free(arg[j]);
 		}
+		free(arg);
 	}
 	if (error == 0)
-		return (free(arg), 0);
-	else
-		return (free(arg), 1);
+		return (0);
+	return (1);
 }
 
 int	duplicates(t_stack stack_a)
@@ -79,8 +79,8 @@ int	init_stacks(char **av, int ac, t_stack *stack_a, t_stack *stack_b)
 			stack_a->size++;
 			free(arg[j]);
 		}
+		free(arg);
 	}
-	free(arg);
 	stack_a->stack = malloc(sizeof(int) * stack_a->size);
 	stack_b->size = stack_a->size;
 	stack_b->stack = malloc(sizeof(int) * stack_b->size);
@@ -118,6 +118,7 @@ int	main(int ac, char **av)
 			return (0);
 		bubble_sort(&a);
 		range(&a, &b);
-		system("leaks push_swap");
+		free(a.stack);
+		free(b.stack);
 	}
 }
