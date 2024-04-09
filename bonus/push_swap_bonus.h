@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:59:48 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/07 22:15:42 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/09 02:49:44 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -38,6 +38,9 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	ra(t_stack *a);
 void	rb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+void	ss(t_stack *a, t_stack *b);
 void	bubble_sort(t_stack *a);
 void	range(t_stack *a, t_stack *b);
 void	sort_three(t_stack *a);
@@ -49,5 +52,13 @@ int		ft_atoi(char *s, int *error);
 int		is_sorted(t_stack *a);
 int		get_max_index(t_stack *b);
 int		get_range(int size);
+void	ft_strncat(char *dst, char *src, int size);
+void	*ft_memfunc(void *b, void *s, int c, size_t len);
+char	*ft_strdup(char *s1);
+char	*ft_strjoin(char *s1, char *s2);
+int		ft_strchr(const char *s, int c);
+char	*get_next_line(int fd);
+int		fcmp(char *s1, char *s2);
+int		read_input(t_stack *a, t_stack *b);
 
 #endif

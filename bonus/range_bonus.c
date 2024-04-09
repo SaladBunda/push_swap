@@ -6,11 +6,11 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 01:07:40 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/07 22:09:56 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:49:34 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	get_max_index(t_stack *x)
 {

@@ -6,11 +6,11 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 16:02:02 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/01 22:35:05 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:49:02 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 static int	word_c(char *str, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:46:57 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/08 18:11:49 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/09 02:43:34 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_sorted(t_stack *a)
 	int	i;
 
 	i = 0;
-	while (i < a->size - 1)
+	while (i < a->top)
 	{
 		if (a->stack[i] < a->stack[i + 1])
 			return (1);

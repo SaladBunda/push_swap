@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/08 18:14:53 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/09 02:49:20 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 {
@@ -89,16 +89,6 @@ int	init_stacks(char **av, int ac, t_stack *stack_a, t_stack *stack_b)
 	return (error);
 }
 
-// void	print_stacks(t_stack a,t_stack b)
-// {
-// 	printf("-----------------stack a-----------\n");
-// 	while(a.top >= 0)
-// 		printf("%d\n", a.stack[a.top--]);
-// 	printf("-----------------stack b------------\n");
-// 	while(b.top >= 0)
-// 		printf("%d\n", b.stack[b.top--]);
-// }
-
 int	main(int ac, char **av)
 {
 	t_stack	a;
@@ -106,18 +96,19 @@ int	main(int ac, char **av)
 
 	if (ac > 1)
 	{
-		get_range(40);
 		if (init_stacks(av, ac, &a, &b) == 1)
-		{
-			write(2, "Error\n", 6);
-			return (0);
-		}
+			return (write(2, "Error\n", 6), 0);
 		if (duplicates(a) == 0)
 			return (write(2, "Error\n", 6), 0);
 		if (is_sorted(&a) == 0)
 			return (0);
 		bubble_sort(&a);
-		range(&a, &b);
+		if (read_input(&a, &b) == -1)
+			return(write(2, "Error\n", 6), 0);
+		if (is_sorted(&a) == 0 && b.top == -1)
+			return(write(1, "OK\n", 3), 0);
+		else
+			return(write(1, "KO\n", 3), 0);
 		free(a.stack);
 		free(b.stack);
 	}

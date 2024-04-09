@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations2.c                                      :+:      :+:    :+:   */
+/*   operations2_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:37:55 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/05 23:04:30 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/09 01:55:23 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	rra(t_stack *a)
 {
@@ -27,7 +27,6 @@ void	rra(t_stack *a)
 			i++;
 		}
 		a->stack[a->top] = tmp;
-		ft_putstr("rra\n");
 	}
 }
 
@@ -46,7 +45,6 @@ void	rrb(t_stack *b)
 			i++;
 		}
 		b->stack[b->top] = tmp;
-		ft_putstr("rrb\n");
 	}
 }
 
@@ -65,7 +63,6 @@ void	ra(t_stack *a)
 			i--;
 		}
 		a->stack[0] = tmp;
-		ft_putstr("ra\n");
 	}
 }
 
@@ -84,6 +81,5 @@ void	rb(t_stack *b)
 			i--;
 		}
 		b->stack[0] = tmp;
-		ft_putstr("rb\n");
 	}
 }

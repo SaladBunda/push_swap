@@ -6,11 +6,11 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:08 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/08 16:59:16 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:48:58 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	sort_three(t_stack *a)
 {
