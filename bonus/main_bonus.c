@@ -100,15 +100,13 @@ int	main(int ac, char **av)
 			return (write(2, "Error\n", 6), 0);
 		if (duplicates(a) == 0)
 			return (write(2, "Error\n", 6), 0);
-		if (is_sorted(&a) == 0)
-			return (0);
 		bubble_sort(&a);
 		if (read_input(&a, &b) == -1)
-			return(write(2, "Error\n", 6), 0);
+			return (write(2, "Error\n", 6), 0);
 		if (is_sorted(&a) == 0 && b.top == -1)
-			return(write(1, "OK\n", 3), 0);
+			return (write(1, "OK\n", 3), 0);
 		else
-			return(write(1, "KO\n", 3), 0);
+			return (write(1, "KO\n", 3), 0);
 		free(a.stack);
 		free(b.stack);
 	}

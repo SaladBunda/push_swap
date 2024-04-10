@@ -57,7 +57,7 @@ void	*ft_memfunc(void *b, void *s, int c, size_t len);
 char	*ft_strdup(char *s1);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strchr(const char *s, int c);
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int *error);
 int		fcmp(char *s1, char *s2);
 int		read_input(t_stack *a, t_stack *b);
 

@@ -71,6 +71,6 @@ int	ft_atoi(char *s, int *error)
 		num = num * 10 +(s[i++] - 48);
 	}
 	if (s[i] != '\0' || num == 0 || num > 2147483647 || num < -2147483648)
-		*error = -1; 
+		*error = -1;
 	return (num * sign);
 }

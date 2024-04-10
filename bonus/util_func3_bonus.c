@@ -47,7 +47,7 @@ void	*ft_memfunc(void *b, void *s, int c, size_t len)
 	{
 		while (i < len)
 		{
-			((unsigned char *)b)[i++] = '\n'; 
+			((unsigned char *)b)[i++] = '\n';
 		}
 		return (b);
 	}
@@ -57,7 +57,7 @@ void	*ft_memfunc(void *b, void *s, int c, size_t len)
 			return (NULL);
 		while (i < len)
 		{
-			((unsigned char *)b)[i] = ((unsigned char *)s)[i]; 
+			((unsigned char *)b)[i] = ((unsigned char *)s)[i];
 			i++;
 		}
 		return (b);

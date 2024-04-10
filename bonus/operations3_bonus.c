@@ -12,7 +12,7 @@
 
 #include "push_swap_bonus.h"
 
-void rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b)
 {
 	ra(a);
 	rb(b);

@@ -12,7 +12,7 @@
 
 #include "push_swap_bonus.h"
 
-char	*ft_read(int fd, char *buffer, int index)
+char	*ft_read(int fd, char *buffer, int index, int *error)
 {
 	char	*tmp;
 	char	*frees;
@@ -23,8 +23,8 @@ char	*ft_read(int fd, char *buffer, int index)
 	while (index > 0)
 	{
 		index = read(fd, tmp, 30000);
-		if (index == -1)
-			return (free(buffer), free(tmp), NULL);
+		if (index == -1 || fcmp(tmp, "\n") == 0)
+			return (free(buffer), free(tmp), buffer = NULL,*error = -1, NULL);
 		if (index != 0)
 		{
 			tmp[index] = '\0';
@@ -97,6 +97,7 @@ char	*rest(char *buffer)
 			if (buffer[i + 1] == '\0')
 				return (free(buffer), buffer = NULL, NULL);
 			rest = ft_substr(buffer, i + 1, ft_strlen(buffer));
+			free(buffer);
 			return (rest);
 		}
 		i++;
@@ -105,14 +106,14 @@ char	*rest(char *buffer)
 	return (NULL);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int *error)
 {
 	char		*line;
 	static char	*buffer;
 
 	if (fd < 0 || read(fd, 0, 0) < 0)
 		return (free(buffer), buffer = NULL, NULL);
-	buffer = ft_read(fd, buffer, 1);
+	buffer = ft_read(fd, buffer, 1, error);
 	if (!buffer)
 	{
 		free(buffer);
