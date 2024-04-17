@@ -6,11 +6,23 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/14 22:47:53 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:20:57 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+void	mallocing(t_stack *a, t_stack *b, int *error)
+{
+	a->stack = malloc(sizeof(int) * a->size);
+	if (!a->stack)
+		*error = 1;
+	b->size = a->size;
+	b->stack = malloc(sizeof(int) * b->size);
+	if (!b->stack)
+		*error = 1;
+	b->top = -1;
+}
 
 int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 {
@@ -28,6 +40,8 @@ int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 		if (av[i][0] == 0)
 			error = 1;
 		arg = ft_split(av[i], ' ');
+		if (!arg[0])
+			error = 1;
 		while (arg[++j])
 		{
 			stack_a->top++;
@@ -36,9 +50,7 @@ int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 		}
 		free(arg);
 	}
-	if (error == 0)
-		return (0);
-	return (1);
+	return (error);
 }
 
 int	duplicates(t_stack stack_a)
@@ -81,10 +93,9 @@ int	init_stacks(char **av, int ac, t_stack *stack_a, t_stack *stack_b)
 		}
 		free(arg);
 	}
-	stack_a->stack = malloc(sizeof(int) * stack_a->size);
-	stack_b->size = stack_a->size;
-	stack_b->stack = malloc(sizeof(int) * stack_b->size);
-	stack_b->top = -1;
+	mallocing(stack_a, stack_b, &error);
+	if (error == 1)
+		return (1);
 	error = fill_stack(av, ac, stack_a, 0);
 	return (error);
 }
@@ -97,16 +108,16 @@ int	main(int ac, char **av)
 	if (ac > 1)
 	{
 		if (init_stacks(av, ac, &a, &b) == 1)
-			return (write(2, "Error\n", 6), 0);
+			return (free(a.stack), free(b.stack), write(2, "Error\n", 6), 0);
 		if (duplicates(a) == 0)
-			return (write(2, "Error\n", 6), 0);
+			return (free(a.stack), free(b.stack), write(2, "Error\n", 6), 0);
 		bubble_sort(&a);
 		if (read_input(&a, &b) == -1)
-			return (system("leaks checker"),write(2, "Error\n", 6), 0);
+			return (free(a.stack), free(b.stack), write(2, "Error\n", 6), 0);
 		if (is_sorted(&a) == 0 && b.top == -1)
-			return (system("leaks checker"),write(1, "OK\n", 3), 0);
+			return (free(a.stack), free(b.stack), write(1, "OK\n", 3), 0);
 		else
-			return (system("leaks checker"),write(1, "KO\n", 3), 0);
+			return (free(a.stack), free(b.stack), write(1, "KO\n", 3), 0);
 		free(a.stack);
 		free(b.stack);
 	}

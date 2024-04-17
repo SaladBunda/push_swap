@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:26:52 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/14 22:34:12 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:43:52 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ int	ft_atoi(char *s, int *error)
 	while (s[i] >= '0' && s[i] <= '9')
 		num = num * 10 +(s[i++] - 48);
 	if (s[i] != '\0' || num == 0 || num > 2147483647 || num < -2147483648)
-		*error = -1;
+		*error = 1;
 	return (num * sign);
 }
