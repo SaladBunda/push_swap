@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 22:26:52 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/09 01:40:31 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:34:12 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	get_range(int size)
 {
 	int	range;
 
-	range = 0.045 * size + 10.5;
+	range = -0.0000233333 * size * size + 0.059 * size + 9.3333;
 	return (range);
 }
 

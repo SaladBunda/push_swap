@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/08 18:37:13 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:54:14 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 		if (av[i][0] == 0)
 			error = 1;
 		arg = ft_split(av[i], ' ');
+		// if(!arg[0])
+		// 	error = 1;
 		while (arg[++j])
 		{
 			stack_a->top++;
@@ -36,9 +38,7 @@ int	fill_stack(char **av, int ac, t_stack *stack_a, int i)
 		}
 		free(arg);
 	}
-	if (error == 0)
-		return (0);
-	return (1);
+	return (error);
 }
 
 int	duplicates(t_stack stack_a)

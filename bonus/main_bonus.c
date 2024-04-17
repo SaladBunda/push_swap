@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:58:38 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/09 02:49:20 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:47:53 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,11 @@ int	main(int ac, char **av)
 			return (write(2, "Error\n", 6), 0);
 		bubble_sort(&a);
 		if (read_input(&a, &b) == -1)
-			return (write(2, "Error\n", 6), 0);
+			return (system("leaks checker"),write(2, "Error\n", 6), 0);
 		if (is_sorted(&a) == 0 && b.top == -1)
-			return (write(1, "OK\n", 3), 0);
+			return (system("leaks checker"),write(1, "OK\n", 3), 0);
 		else
-			return (write(1, "KO\n", 3), 0);
+			return (system("leaks checker"),write(1, "KO\n", 3), 0);
 		free(a.stack);
 		free(b.stack);
 	}

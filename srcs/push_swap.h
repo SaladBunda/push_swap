@@ -6,18 +6,15 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:59:48 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/07 22:15:42 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/12 20:45:27 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
-# include <fcntl.h>
 
 typedef struct s_stack
 {

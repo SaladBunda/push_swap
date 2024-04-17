@@ -6,7 +6,7 @@
 /*   By: ael-maaz <ael-maaz@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 02:48:47 by ael-maaz          #+#    #+#             */
-/*   Updated: 2024/04/09 02:49:29 by ael-maaz         ###   ########.fr       */
+/*   Updated: 2024/04/14 22:47:27 by ael-maaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	read_input(t_stack *a, t_stack *b)
 		if (line[0] == '\0')
 			break ;
 		if (test_line(line, a, b) == -1)
-			return (-1);
+			return (free(line),-1);
 		free(line);
 	}
 	if (error == -1)
